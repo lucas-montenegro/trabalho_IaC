@@ -6,24 +6,18 @@
 #include <stdlib.h>
 #include <string.h>
 
-void memoria() {
-	char bash_cmd[256] = "ps v 0 | awk '{print $9}' | grep -v MEM";
-	char buffer[1000];
-	FILE *pipe;
-	int len;
-	pipe = popen(bash_cmd, "r");
+void consumo_cpu() {
 
-	if (NULL == pipe) {
-		perror("pipe");
-		exit(1);
-	}
+}
 
-	char* mem_usage = fgets(buffer, sizeof(buffer), pipe);
-	len = strlen(bash_cmd);
-	bash_cmd[len-1] = '\0';
-	pclose(pipe);
 
-	printf("mem_usage == %s", mem_usage);
+
+void consumo_memoria() {
+
+
+
+
+
 }
 
 int main (int argc, char *argv[], char *envp[]) {
@@ -39,7 +33,9 @@ int main (int argc, char *argv[], char *envp[]) {
 	else if( pid > 0 ) /* se sou o processo pai*/
 	{
 		while(i <= 10) {
-			memoria();
+			system("ps -p <pid> -o %cpu");
+			consumo_memoria();
+
 			i++;
 			sleep(1);
 		}
