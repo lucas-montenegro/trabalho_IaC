@@ -21,12 +21,16 @@ void consumo_cpu(int pid) {
 
 
 
-void consumo_memoria() {
+void consumo_memoria(int pid) {
+	char p1[10] = "pmap"; // primeira parte do comando
+	char p2[23] = "| grep -i total"; // parte final do comando
+	char bash_cmd[256]; // vai receber o comando "completo" a partir da concatenacao
 
+	sprintf(bash_cmd,"%s %d %s", p1, pid, p2); // concatena a string para usar o pid
 
+	system(bash_cmd); // faz a chamada de sistema para calcular o uso da cpu
 
-
-
+	return;
 }
 
 int main (int argc, char *argv[], char *envp[]) {
@@ -45,7 +49,7 @@ int main (int argc, char *argv[], char *envp[]) {
 			consumo_cpu(pid); // a funcao retorna em % o consumo da cpu pelo processo filho
 
 			printf("Consumo de Memoria(em Kilobytes):\n"); 
-			consumo_memoria(); // a funcao retorna em kilobytes a memoria usada pelo processo filho
+			consumo_memoria(pid); // a funcao retorna em kilobytes a memoria usada pelo processo filho
 
 			i++; // contador 
 			sleep(1); // funcao para contar os segundos
