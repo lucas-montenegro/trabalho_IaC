@@ -3,5 +3,5 @@ Trabalho Prático da AB2 de Introdução à Computação
 
 Grupo:
 -Lucas Montenegro Andrade Assunção
--Luis 
--Vinícius 
+-Luís Antônio da Silva Nascimento
+-Vinicius Monteiro Pontes
