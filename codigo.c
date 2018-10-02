@@ -52,6 +52,7 @@ int main (int argc, char *argv[], char *envp[]) {
 				consumo_memoria(pid); // a funcao retorna em kilobytes a memoria usada pelo processo filho
 			}
 
+			printf("-----------------------------------\n");
 			i++; // contador 
 			sleep(1); // funcao para contar os segundos
 		}
