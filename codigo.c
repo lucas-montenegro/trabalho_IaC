@@ -81,7 +81,7 @@ int main (int argc, char *argv[], char *envp[]) {
 
 			if (total_t == 0.0000 || total_t == 1.0000 || total_t == 2.0000 || total_t == 3.0000 || total_t == 4.0000 || total_t == 5.0000 || total_t == 6.0000 || total_t == 7.0000 || total_t == 8.0000 || total_t == 9.0000)
 			{
-				malloc(sizeof(100000));
+				malloc(10 * sizeof(100000));
 			}
 		}	
 	}
