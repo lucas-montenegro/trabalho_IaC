@@ -46,7 +46,7 @@ int main (int argc, char *argv[], char *envp[]) {
 			printf("Consumo da CPU(em %%):\n");
 			consumo_cpu(pid); // a funcao retorna em % o consumo da cpu pelo processo filho
 
-			if(strcmp(argv[1], "cpu-mem") == 0)
+			if(strcmp(argv[1], "ucp-mem") == 0)
 			{
 				printf("Consumo de Memoria(em Kilobytes):\n"); 
 				consumo_memoria(pid); // a funcao retorna em kilobytes a memoria usada pelo processo filho
@@ -57,7 +57,7 @@ int main (int argc, char *argv[], char *envp[]) {
 			sleep(1); // funcao para contar os segundos
 		}
 
-		kill(0, SIGKILL); // mata o processo filho
+		kill(pid, SIGKILL); // mata o processo filho
 	//TODO guarde a cada segundo o consumo de memória (em Kilobytes) e CPU (em porcentagem) do processo filho
 	//TODO após 10 segundos de execução, mate o proceso filho
 	}
@@ -87,7 +87,7 @@ int main (int argc, char *argv[], char *envp[]) {
 	}
 	perror ("Erro: "); /* execve nãoo funcionou */
 
-	printf ("Tchau !\n");
+	printf ("Tchau !\n"); 
 	exit(0) ; /* encerra o processo com sucesso (código 0) */
 	}
 }
