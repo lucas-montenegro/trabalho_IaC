@@ -57,7 +57,10 @@ int main (int argc, char *argv[], char *envp[]) {
 			sleep(1); // funcao para contar os segundos
 		}
 
+		printf ("Tchau !\n"); 
+
 		kill(pid, SIGKILL); // mata o processo filho
+		
 	//TODO guarde a cada segundo o consumo de memória (em Kilobytes) e CPU (em porcentagem) do processo filho
 	//TODO após 10 segundos de execução, mate o proceso filho
 	}
@@ -87,7 +90,6 @@ int main (int argc, char *argv[], char *envp[]) {
 	}
 	perror ("Erro: "); /* execve nãoo funcionou */
 
-	printf ("Tchau !\n"); 
 	exit(0) ; /* encerra o processo com sucesso (código 0) */
 	}
 }
