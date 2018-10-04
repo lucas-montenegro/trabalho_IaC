@@ -63,12 +63,12 @@ int main (int argc, char *argv[], char *envp[]) {
 	}
 	else /* senão, sou o processo filho (pid == 0) */
 	{
-	if(strcmp(argv[1], "cpu") == 0) { //TODO se argv[1] for igual a 'cpu', executar código com utilização intensa da UCP
+	if(strcmp(argv[1], "ucp") == 0) { //TODO se argv[1] for igual a 'cpu', executar código com utilização intensa da UCP
 		for(; ;) {
 
 		}
 	}
-	else if(strcmp(argv[1], "cpu-mem") == 0) { 	//TODO se argv[1] for igual a 'cpu-mem', executar código com utilização intensa da UCP e da memória
+	else if(strcmp(argv[1], "ucp-mem") == 0) { 	//TODO se argv[1] for igual a 'cpu-mem', executar código com utilização intensa da UCP e da memória
 		//int begin = time(NULL), end, i;
 		clock_t start_t, end_t, total_t;
 		int i;
