@@ -8,17 +8,17 @@ Professor - André Lage.
 
 - Discente 1
 
-    -- Nome: Lucas Montenegro Andrade Assunção.
+    -- Nome: Lucas Montenegro Andrade Assunção.<br/>
     -- Matrícula: 18110496.
 
 - Discente 2
 
-    -- Nome: Luís Antônio da Silva Nascimento.
+    -- Nome: Luís Antônio da Silva Nascimento.<br/>
     -- Matrícula: 18110497.
 
 - Discente 3
 
-    -- Nome: Vinícius Monteiro Pontes.
+    -- Nome: Vinícius Monteiro Pontes.<br/>
     -- Matrícula: 18110528.
 
 **Observação:** A nota deverá ser distribuída de forma igualitária entre os integrantes da equipe.
@@ -37,11 +37,11 @@ Gráfico de consumo de memória (KB):
 # Discussão
 #### Utilização intensa da UCP
 
-Ao analisarmos o [gráfico](https://github.com/lucas-montenegro/trabalho_IaC/blob/master/src/grafico_ucp.jpeg "Curva de uso da UCP") referente ao uso intenso de UCP, e antes disso os resultados obtidos durante o desenvolvimento do programa, logo verificamos que sua curva de crescimento inicial se mostrava desproporcional ao restante da execução. Com exceção ao primeiro segundo, o gráfico sempre mostrou pequeno desvio, dificilmente ultrapassando a marca de uma dúzia (%), o que foi contra nosso instinto de que um laço vazio de 'for' teria um crescimento grande, mas constante. Foi contraintuitivo também o fato de que a porcentagem de uso da UCP frequentemente ultrapassou os 100 porcento, e após pesquisa inferimos que devido à natureza do comando `ps -p -o %cpu | grep -v %CPU` , esse número é a soma do uso de todos os núcleos do processador. Após esse entendimento, nossas expectativas se tornaram mais alinhadas com os resultados.
+Ao analisarmos o [gráfico](https://github.com/lucas-montenegro/trabalho_IaC/blob/master/src/grafico_ucp.jpeg "Curva de uso da UCP") referente ao uso intenso de UCP e, antes disso, os resultados obtidos durante o desenvolvimento do programa, logo verificamos que sua curva de crescimento inicial se mostrava desproporcional ao restante da execução. Com exceção ao primeiro segundo, o gráfico sempre mostrou pequeno desvio, dificilmente ultrapassando a marca de uma dúzia (%), o que foi contra nosso instinto de que um laço vazio de 'for' teria um crescimento exponencial. Foi contraintuitivo também o fato de que a porcentagem de uso da UCP frequentemente ultrapassou 100 %, que após pesquisarmos, inferimos que devido à natureza do comando `ps -p -o %cpu | grep -v %CPU` esse número é a soma do uso de todos os núcleos do processador. Após esse entendimento, nossas expectativas se tornaram mais alinhadas com os resultados.
 
 #### Utilização intensa da memória
 
-Na análise dos [resultados](https://github.com/lucas-montenegro/trabalho_IaC/blob/master/src/grafico_memoria.jpeg "Curva de uso da memória") reunidos pela execução do programa com uso intenso de memória, percebemos que eles estavam dessa vez mais nivelados com nossas expectativas, visto que apresentaram um crescimento grande, mas muito mais constante. Entretanto, tivemos que antes chegar na compreensão de que `malloc(sizeof(100000))` , da forma recebida como referência do trabalho, nos daria o mesmo resultado que `malloc(sizeof(int))` . Isso se daria independente da ordem de grandeza do número, fazendo assim necessária a utilização de uma multiplicação da quantidade de bytes, como em `malloc(10 * sizeof(int))`.
+Na análise dos [resultados](https://github.com/lucas-montenegro/trabalho_IaC/blob/master/src/grafico_memoria.jpeg "Curva de uso da memória") reunidos pela execução do programa com uso intenso de memória, percebemos que eles estavam, dessa vez, mais nivelados com nossas expectativas, visto que apresentaram um crescimento grande e constante. Entretanto, tivemos que chegar na compreensão de que `malloc(sizeof(100000))`, da forma recebida como referência do trabalho, resultaria no mesmo que `malloc(sizeof(int))`. Isso se daria independentemente da ordem de grandeza do número, fazendo assim necessária a utilização de uma multiplicação na quantidade de bytes, como em `malloc(10 * sizeof(int))`.
 
 # Experiência no desenvolvimento
 
