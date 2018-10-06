@@ -4,7 +4,7 @@
 Executar a seguinte operação no terminal:<br/>
 <p>-> gcc main.c -o main</p>
 
-## Instruçes para executar o programa main.c
+## Instruções para executar o programa main.c
 
 Rodar o programa com utilização intensa da cpu:<br/>
 <p>-> ./main ucp</p>
